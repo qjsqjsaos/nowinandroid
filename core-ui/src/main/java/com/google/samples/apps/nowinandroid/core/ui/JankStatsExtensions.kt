@@ -33,9 +33,16 @@ import kotlinx.coroutines.CoroutineScope
  * Retrieves [PerformanceMetricsState.MetricsStateHolder] from current [LocalView] and
  * remembers it until the View changes.
  * @see PerformanceMetricsState.getForHierarchy
+ * 현재 LocalView에서 "PerformanceMetricsState.MetricsStateHolder"를 검색하고 View가 변경될 때까지 기억합니다.
+ * 홀더를 반환합니다.
+ *
+ * 참고
+ * https://developer.android.com/topic/performance/jankstats
  */
 @Composable
 fun rememberMetricsStateHolder(): Holder {
+    // TODO: 이곳에서 JankStats에 대한 공부를 하다가 멈춤 우선 컴포즈 UI에 대한 간단한 공부가 필요해 보임
+    //참고 https://developer.android.com/codelabs/jetpack-compose-basics#0 배우고 -> JankStats 다시 이어서 공부하기
     val localView = LocalView.current
 
     return remember(localView) {

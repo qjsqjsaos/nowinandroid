@@ -28,6 +28,7 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 @InstallIn(ActivityComponent::class)
 object JankStatsModule {
+    //Jank Frame Listener, 이곳에서 버벅거림 데이터를 제공합니다.
     @Provides
     fun providesOnFrameListener(): JankStats.OnFrameListener {
         return JankStats.OnFrameListener { frameData ->
@@ -44,6 +45,7 @@ object JankStatsModule {
         return activity.window
     }
 
+    //JankStats의 초기화된 인스턴스 반환
     @Provides
     fun providesJankStats(
         window: Window,

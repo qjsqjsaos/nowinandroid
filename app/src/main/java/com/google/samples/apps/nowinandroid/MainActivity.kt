@@ -53,6 +53,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
+        //JankStats가 버벅거림을 추적할인지의 여부
         lazyStats.get().isTrackingEnabled = true
     }
 
